@@ -1,0 +1,3 @@
+io.ghaylan.validation.config.ValidationConfig
+io.ghaylan.validation.config.ValidationInfrastructureConfig
+io.ghaylan.validation.integration.ConfigValidationPostProcessor
