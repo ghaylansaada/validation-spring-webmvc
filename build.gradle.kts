@@ -46,7 +46,7 @@ dependencies {
 	implementation("org.jsoup:jsoup:1.22.2")
 	
 	// Phone number parsing / validation
-	implementation("com.googlecode.libphonenumber:libphonenumber:9.0.32")
+	implementation("com.googlecode.libphonenumber:libphonenumber:9.0.33")
 
     // Test dependencies
     testImplementation("org.junit.jupiter:junit-jupiter:6.1.0")

@@ -2,8 +2,8 @@ package io.ghaylan.validation.config
 
 import io.ghaylan.validation.engine.ValidatorEngine
 import io.ghaylan.validation.integration.ValidatingServletInvocableHandlerMethod
+import org.springframework.boot.autoconfigure.AutoConfiguration
 import org.springframework.boot.webmvc.autoconfigure.WebMvcRegistrations
-import org.springframework.context.annotation.Configuration
 import org.springframework.web.method.HandlerMethod
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter
 import org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod
@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHan
  *
  * @property validatorEngine The core stateless validation runtime engine injected and propagated down to custom request execution contexts.
  */
-@Configuration
+@AutoConfiguration
 class ValidationInfrastructureConfig(
     private val validatorEngine: ValidatorEngine
 ) : WebMvcRegistrations {
