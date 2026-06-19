@@ -10,14 +10,6 @@ plugins {
 group = "io.github.ghaylansaada"
 version = "0.0.1"
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(25)
-	}
-	withSourcesJar()
-	withJavadocJar()
-}
-
 repositories {
     mavenCentral()
     mavenLocal()
@@ -46,7 +38,7 @@ dependencies {
 	implementation("org.jsoup:jsoup:1.22.2")
 	
 	// Phone number parsing / validation
-	implementation("com.googlecode.libphonenumber:libphonenumber:9.0.33")
+	implementation("com.googlecode.libphonenumber:libphonenumber:9.0.32")
 
     // Test dependencies
     testImplementation("org.junit.jupiter:junit-jupiter:6.1.0")
@@ -54,11 +46,12 @@ dependencies {
 }
 
 kotlin {
+	jvmToolchain(25)
 	compilerOptions {
 		// Emit method parameter names for reflection frameworks
 		javaParameters = true
 		
-		// Generate Java 21 bytecode
+		// Generate Java 25 bytecode
 		jvmTarget.set(JvmTarget.JVM_25)
 		
 		// Enable latest stable Kotlin behavior immediately
@@ -76,6 +69,11 @@ kotlin {
         // Allow usage of experimental Kotlin standard library APIs
         optIn.add("kotlin.ExperimentalStdlibApi")
 	}
+}
+
+java {
+	withSourcesJar()
+	withJavadocJar()
 }
 
 tasks.withType<Test> {
